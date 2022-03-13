@@ -56,7 +56,8 @@ body {
 }
 
 .card-container {
-    width: 500px;
+    width: 600px;
+    height: 900px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -77,14 +78,19 @@ body {
         color: $accent-color;
     }
     .nickname {
-        letter-spacing: 5px;
+        font-size: 20px;
         font-family: "Montserrat", sans-serif;
+        letter-spacing: 5px;
+    }
+    .decoration {
+        font-size: 20px;
     }
     .description {
+        font-size: 18px;
         font-family: "Myriad Pro";
     }
     .social {
-        padding: 0.75rem 4.5rem;
+        padding: 1rem 6rem;
         display: flex;
         justify-content: center;
         align-items: center;

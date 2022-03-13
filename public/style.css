@@ -60,7 +60,8 @@ body {
 }
 
 .card-container {
-  width: 500px;
+  width: 600px;
+  height: 900px;
   padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,16 +93,22 @@ body {
 }
 
 .card-container .nickname {
-  letter-spacing: 5px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
+  letter-spacing: 5px;
+}
+
+.card-container .decoration {
+  font-size: 20px;
 }
 
 .card-container .description {
+  font-size: 18px;
   font-family: "Myriad Pro";
 }
 
 .card-container .social {
-  padding: 0.75rem 4.5rem;
+  padding: 1rem 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
