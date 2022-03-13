@@ -16,6 +16,7 @@ for (url of urls) {
         this.classList.add("active");
     });
 }
+urls[1].removeEventListener();
 if (getCookie("active_page_index")) {
     urls[getCookie("active_page_index")].classList.add("active");
     pages[getCookie("active_page_index")].classList.add("active");
