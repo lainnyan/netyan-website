@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <title>netyann</title>
+    </head>
+    <body>
+        <div class="urls">
+            <div class="url">ГЛАВНАЯ</div>
+            |
+            <div class="url">БИЛДЫ</div>
+            |
+            <div class="url">ТОП</div>
+        </div>
+
+        <div class="home page">
+            <div class="card-container">
+                <p class="nickname">♡ NETYANN ♡</p>
+                <img class="avatar" alt="avatar" />
+                <p class="description">Streamer • Genshin Content Creator</p>
+                <div class="socials">
+                    <a href="https://twitch.tv/netyann" class="social">TWITCH</a>
+                    <a href="https://tiktok.com/@netyann" class="social">TIK TOK</a>
+                    <a href="https://discord.com/invite/e8GW8CRj6a" class="social">DISCORD</a>
+                    <a href="https://shikimori.one/lainnyan" class="social">ANIME LIST</a>
+                    <a href="https://steamcommunity.com/id/lainxgod" class="social">STEAM</a>
+                </div>
+                <p class="decoration">︵‿︵‿୨♡୧‿︵‿︵</p>
+            </div>
+        </div>
+
+        <div class="builds page">
+            <input type="text" class="searchbar" id="build-search" placeholder="Поиск" />
+            <div class="gallery">
+                <span id="img-prev"><</span>
+                <div class="img-container" id="build-keqing">
+                    <img src="images/Character_Keqing_Card.jpg" class="build-img" />
+                    <div class="modal">
+                        <span class="close">✖</span>
+                        <img src="https://i.imgur.com/6ghGu2z.png" class="modal-content" />
+                    </div>
+                </div>
+                <div class="img-container" id="build-ayaka">
+                    <img src="images/Character_Kamisato_Ayaka_Card.png" class="build-img" />
+                    <div class="modal">
+                        <span class="close">✖</span>
+                        <img src="https://i.imgur.com/qXcjo1R.png" class="modal-content" />
+                    </div>
+                </div>
+                <div class="img-container" id="build-xiao">
+                    <img src="images/Character_Xiao_Card.jpg" class="build-img" />
+                    <div class="modal">
+                        <span class="close">✖</span>
+                        <img src="https://i.imgur.com/0Gg0hvl.png" class="modal-content" />
+                        <img src="https://i.imgur.com/jHj1XbJ.png" class="modal-content" />
+                    </div>
+                </div>
+                <div class="img-container" id="build-raiden">
+                    <img src="images/Character_Raiden_Shogun_Card.jpg" class="build-img" />
+                </div>
+                <div class="img-container" id="build-zhongli">
+                    <img src="images/Character_Zhongli_Card.png" class="build-img" />
+                </div>
+                <div class="img-container" id="build-xiangling">
+                    <img src="images/Character_Xiangling_Card.jpg" class="build-img" />
+                </div>
+                <div class="img-container" id="build-xingqiu">
+                    <img src="images/Character_Xingqiu_Card.jpg" class="build-img" />
+                </div>
+                <span id="img-next">></span>
+            </div>
+        </div>
+
+        <div class="top page">
+            <div class="table-container">
+                <table id="top-table"></table>
+            </div>
+            <div class="explanation">
+                <h3>Как это работает?</h3>
+                <ul>
+                    <li>
+                        За отправленное сообщение ваш счётчик активности становится
+                        <b style="color: hsl(140 50% 50%)">10</b>.
+                    </li>
+                    <li>
+                        Каждую минуту ваш счётчик активности понижается на <b style="color: hsl(140 50% 50%)">1</b>.
+                    </li>
+                    <li>
+                        Каждую минуту вы получаете <b style="color: hsl(0 90% 50%)">4/5 опыта</b>, если ваш счётчик
+                        активности равен хотя бы <b style="color: hsl(140 50% 50%)">1</b>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="scripts/style.js"></script>
+        <script src="scripts/top.js"></script>
+        <script src="scripts/search.js"></script>
+    </body>
+</html>

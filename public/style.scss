@@ -1,0 +1,290 @@
+$main-color: hsl(240, 20%, 90%);
+$accent-color: hsl(240, 20%, 70%);
+$accent-color-dark: hsl(240, 20%, 50%);
+$accent-color-light: hsl(240, 20%, 80%);
+
+@font-face {
+    font-family: "Myriad Pro";
+    src: url("./fonts/Myriad-Pro_Regular.OTF");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $main-color;
+}
+
+.urls {
+    margin: 2rem auto 0 auto;
+    display: flex;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: $accent-color;
+
+    .url {
+        padding: 0 2rem;
+        letter-spacing: 3px;
+        cursor: pointer;
+        transition: color 0.25s;
+
+        &.active {
+            color: $accent-color-dark;
+        }
+    }
+}
+
+.page {
+    margin: 2rem 0;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+.card-container {
+    width: 500px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+    * {
+        margin-bottom: 2rem;
+    }
+    img {
+        width: 35%;
+        border-radius: 50%;
+    }
+    p {
+        color: $accent-color;
+    }
+    .nickname {
+        letter-spacing: 5px;
+        font-family: "Montserrat", sans-serif;
+    }
+    .description {
+        font-family: "Myriad Pro";
+    }
+    .social {
+        padding: 0.75rem 4.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        letter-spacing: 5px;
+        text-decoration: none;
+        color: $main-color;
+        background-color: $accent-color;
+
+        transition: background-color 0.25s;
+
+        &:hover {
+            background-color: $accent-color-light;
+        }
+    }
+}
+
+.builds {
+    width: 100vw;
+}
+.searchbar {
+    display: block;
+    margin: 0 auto;
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $accent-color-dark;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    &:focus {
+        outline: none;
+    }
+}
+.gallery {
+    width: 100%;
+    height: 600px;
+    margin: 2rem 0;
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    #img-next,
+    #img-prev {
+        width: 5%;
+        height: 100%;
+        position: fixed;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        font-family: "Myriad Pro";
+        font-size: 40px;
+        font-weight: bold;
+        user-select: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+        color: white;
+        cursor: pointer;
+        transition: opacity 0.25s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    #img-prev {
+        left: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .img-container {
+        width: 150px;
+        margin: 3px;
+        border-radius: 5px;
+        overflow: hidden;
+        flex-shrink: 0;
+        cursor: pointer;
+
+        .build-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: transform 0.5s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            padding: 5rem;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            cursor: default;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+
+                border: 3px solid white;
+                border-radius: 5px;
+
+                animation-name: zoom;
+                animation-duration: 0.5s;
+            }
+
+            .close {
+                position: fixed;
+                top: 15px;
+                right: 45px;
+                color: white;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.25s;
+
+                &:hover,
+                &:focus {
+                    color: hsl(0, 0%, 50%);
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.1);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.top {
+    margin: 2rem 0;
+}
+.table-container {
+    width: 700px;
+    float: left;
+    margin: 0 2rem;
+}
+#top-table {
+    width: 100%;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    border-spacing: 0 0.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+    tr {
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+
+        td {
+            padding: 0.5rem 2rem;
+        }
+    }
+
+    .table-rank,
+    .table-exp {
+        width: 10%;
+        text-align: center;
+    }
+}
+.explanation {
+    width: 300px;
+    float: left;
+    background-color: white;
+    font-family: "Myriad Pro";
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+    h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    ul {
+        list-style-position: inside;
+    }
+}
