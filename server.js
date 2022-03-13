@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const blacklist = ["netyanbot", "mikuia", "Nightbot"];
+const blacklist = ["netyanbot", "Mikuia", "Nightbot"];
 
 const tmiClient = new tmi.client({
     channels: ["netyann"],
