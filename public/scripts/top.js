@@ -11,7 +11,7 @@ setInterval(
                 while (topTable.hasChildNodes()) {
                     topTable.removeChild(topTable.firstChild);
                 }
-                for (let i = 0; i < result.length; i++) {
+                for (let i = 0; i < 100; i++) {
                     const tr = topTable.insertRow();
                     const tdRank = tr.insertCell();
                     tdRank.classList.add("table-rank");
