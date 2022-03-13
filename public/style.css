@@ -355,4 +355,11 @@ body {
 .explanation ul {
   list-style-position: inside;
 }
+
+@media only screen and (max-width: 1080px) {
+  .explanation {
+    width: 100%;
+    margin: 2rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
