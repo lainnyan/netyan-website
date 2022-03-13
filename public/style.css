@@ -357,6 +357,9 @@ body {
 }
 
 @media only screen and (max-width: 1080px) {
+  .table-container {
+    float: none;
+  }
   .explanation {
     width: 700px;
     margin: 2rem;
