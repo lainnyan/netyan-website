@@ -1,7 +1,7 @@
 const urls = document.getElementsByClassName("url");
 const pages = document.getElementsByClassName("page");
 for (url of urls) {
-    url.addEventListener("click", function () {
+    url.addEventListener("click", function func() {
         for (let i = 0; i < urls.length; i++) {
             if (urls[i].classList.contains("active")) {
                 urls[i].classList.remove("active");
@@ -15,7 +15,7 @@ for (url of urls) {
         pages[index].classList.add("active");
         this.classList.add("active");
     });
-    urls[1].removeEventListener("click", arguments.callee);
+    urls[1].removeEventListener("click", func);
 }
 if (getCookie("active_page_index")) {
     urls[getCookie("active_page_index")].classList.add("active");
