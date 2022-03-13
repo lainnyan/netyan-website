@@ -13,6 +13,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const blacklist = ["netyanbot", "mikuia", "Nightbot"];
+
 const tmiClient = new tmi.client({
     channels: ["netyann"],
 });
@@ -70,6 +72,7 @@ setInterval(async () => {
 }, 60000);
 
 tmiClient.on("message", async (channel, tags, message, self) => {
+    if (blacklist.includes(tags["display-name"])) return;
     fetch("https://api.twitch.tv/helix/streams?user_login=netyann", {
         method: "GET",
         headers: {
@@ -95,8 +98,6 @@ tmiClient.on("message", async (channel, tags, message, self) => {
                     });
                     await newUser.save();
                 }
-            } else {
-                return;
             }
         });
 });
