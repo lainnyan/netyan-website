@@ -11,11 +11,11 @@ for (url of urls) {
         }
 
         const index = [...this.parentElement.children].indexOf(this);
+        if (index == 1) this.removeEventListener("click", func);
         setCookie("active_page_index", index, { "max-age": 7 * 24 * 60 * 60 });
         pages[index].classList.add("active");
         this.classList.add("active");
     });
-    urls[1].removeEventListener("click", func);
 }
 if (getCookie("active_page_index")) {
     urls[getCookie("active_page_index")].classList.add("active");
