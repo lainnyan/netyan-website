@@ -15,8 +15,8 @@ for (url of urls) {
         pages[index].classList.add("active");
         this.classList.add("active");
     });
+    url[1].removeEventListener("click", arguments.callee);
 }
-urls[1].removeEventListener();
 if (getCookie("active_page_index")) {
     urls[getCookie("active_page_index")].classList.add("active");
     pages[getCookie("active_page_index")].classList.add("active");
