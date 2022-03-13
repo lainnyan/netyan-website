@@ -2,6 +2,9 @@ const urls = document.getElementsByClassName("url");
 const pages = document.getElementsByClassName("page");
 for (url of urls) {
     url.addEventListener("click", function func() {
+        const index = [...this.parentElement.children].indexOf(this);
+        if (index == 1) this.removeEventListener("click", func);
+
         for (let i = 0; i < urls.length; i++) {
             if (urls[i].classList.contains("active")) {
                 urls[i].classList.remove("active");
@@ -9,9 +12,6 @@ for (url of urls) {
                 break;
             }
         }
-
-        const index = [...this.parentElement.children].indexOf(this);
-        if (index == 1) this.removeEventListener("click", func);
         setCookie("active_page_index", index, { "max-age": 7 * 24 * 60 * 60 });
         pages[index].classList.add("active");
         this.classList.add("active");
