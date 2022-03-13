@@ -14,12 +14,6 @@ $accent-color-light: hsl(240, 20%, 80%);
     box-sizing: border-box;
 }
 
-html {
-    &::-webkit-scrollbar {
-        display: none;
-    }
-}
-
 body {
     display: flex;
     flex-direction: column;

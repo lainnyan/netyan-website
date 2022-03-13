@@ -10,10 +10,6 @@
           box-sizing: border-box;
 }
 
-html::-webkit-scrollbar {
-  display: none;
-}
-
 body {
   display: -webkit-box;
   display: -ms-flexbox;
