@@ -3,7 +3,7 @@ const pages = document.getElementsByClassName("page");
 for (url of urls) {
     url.addEventListener("click", function func() {
         const index = [...this.parentElement.children].indexOf(this);
-        if (index == 1) return;
+        //if (index == 1) return;
 
         for (let i = 0; i < urls.length; i++) {
             if (urls[i].classList.contains("active")) {
