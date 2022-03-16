@@ -100,7 +100,7 @@ body {
 
 .card-container .description {
   font-size: 18px;
-  font-family: "Myriad Pro";
+  font-family: "Quicksand", sans-serif;
 }
 
 .card-container .social {
@@ -174,7 +174,7 @@ body {
   top: 0;
   right: 0;
   z-index: 1;
-  font-family: "Myriad Pro";
+  font-family: "Quicksand", sans-serif;
   font-size: 40px;
   font-weight: bold;
   -webkit-user-select: none;
@@ -252,7 +252,7 @@ body {
 .gallery .img-container .modal .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
+  width: 75%;
   border: 3px solid white;
   border-radius: 5px;
   -webkit-animation-name: zoom;
@@ -328,13 +328,37 @@ body {
 }
 
 #top-table tr td {
-  padding: 0.5rem 2rem;
+  padding: 1rem;
+}
+
+#top-table tr:first-child td {
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  color: #999;
 }
 
 #top-table .table-rank,
-#top-table .table-exp {
+#top-table .table-exp,
+#top-table .table-level,
+#top-table .table-progress {
   width: 10%;
   text-align: center;
+}
+
+#top-table .table-span-level {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #666699;
 }
 
 .explanation {
