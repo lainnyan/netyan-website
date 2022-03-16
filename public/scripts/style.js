@@ -8,7 +8,6 @@ for (url of urls) {
         }
 
         const index = [...this.parentElement.children].indexOf(this);
-        setCookie("active_page_index", index, { "max-age": 7 * 24 * 60 * 60 });
         window.history.replaceState("", "", `/${pages[index].classList[0]}`);
         pages[index].classList.add("active");
         this.classList.add("active");
@@ -30,12 +29,19 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < urls.length; i++) {
             if (pages[i].classList.contains("active")) {
                 urls[i].classList.add("active");
-                setCookie("active_page_index", i, { "max-age": 7 * 24 * 60 * 60 });
                 continue;
             }
             pages[i].classList.remove("active");
             urls[i].classList.remove("active");
         }
+    } else {
+        for (let i = 0; i < urls.length; i++) {
+            pages[i].classList.remove("active");
+            urls[i].classList.remove("active");
+        }
+        window.history.replaceState("", "", "/home");
+        pages[0].classList.add("active");
+        urls[0].classList.add("active");
     }
 });
 
