@@ -13,13 +13,6 @@ for (url of urls) {
         this.classList.add("active");
     });
 }
-if (getCookie("active_page_index")) {
-    urls[getCookie("active_page_index")].classList.add("active");
-    pages[getCookie("active_page_index")].classList.add("active");
-} else {
-    urls[0].classList.add("active");
-    pages[0].classList.add("active");
-}
 document.addEventListener("DOMContentLoaded", function () {
     var ID = getQueryVariable("id");
     if (ID) {
