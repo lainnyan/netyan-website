@@ -2,7 +2,7 @@ const topTable = document.getElementById("top-table");
 
 setInterval(
     (function updateTop() {
-        fetch("/top")
+        fetch("/topBD")
             .then((response) => response.json())
             .then((result) => {
                 result.sort(function (a, b) {

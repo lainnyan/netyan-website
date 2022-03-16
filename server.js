@@ -3,6 +3,7 @@ const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fet
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const app = express();
+const url = require("url");
 const path = require("path");
 const tmi = require("tmi.js");
 const mongoose = require("mongoose");
@@ -60,6 +61,37 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
+app.get("/home", (req, res) => {
+    res.redirect(
+        url.format({
+            pathname: "/",
+            query: {
+                id: "home",
+            },
+        })
+    );
+});
+app.get("/builds", (req, res) => {
+    res.redirect(
+        url.format({
+            pathname: "/",
+            query: {
+                id: "builds",
+            },
+        })
+    );
+});
+app.get("/top", (req, res) => {
+    res.redirect(
+        url.format({
+            pathname: "/",
+            query: {
+                id: "top",
+            },
+        })
+    );
+});
+
 setInterval(async () => {
     const users = await User.find({ activityMeter: { $gte: 1 } });
 
@@ -102,7 +134,7 @@ tmiClient.on("message", async (channel, tags, message, self) => {
         });
 });
 
-app.get("/top", async (req, res) => {
+app.get("/topBD", async (req, res) => {
     const repo = await User.find();
     res.send(repo);
 });

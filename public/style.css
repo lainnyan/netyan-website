@@ -337,6 +337,10 @@ body {
   color: #999;
 }
 
+#top-table .table-nickname {
+  color: #666699;
+}
+
 #top-table .table-rank,
 #top-table .table-exp,
 #top-table .table-level,

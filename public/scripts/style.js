@@ -2,16 +2,14 @@ const urls = document.getElementsByClassName("url");
 const pages = document.getElementsByClassName("page");
 for (url of urls) {
     url.addEventListener("click", function func() {
-        const index = [...this.parentElement.children].indexOf(this);
-
         for (let i = 0; i < urls.length; i++) {
-            if (urls[i].classList.contains("active")) {
-                urls[i].classList.remove("active");
-                pages[i].classList.remove("active");
-                break;
-            }
+            pages[i].classList.remove("active");
+            urls[i].classList.remove("active");
         }
+
+        const index = [...this.parentElement.children].indexOf(this);
         setCookie("active_page_index", index, { "max-age": 7 * 24 * 60 * 60 });
+        window.history.replaceState("", "", `/${pages[index].classList[0]}`);
         pages[index].classList.add("active");
         this.classList.add("active");
     });
@@ -23,6 +21,23 @@ if (getCookie("active_page_index")) {
     urls[0].classList.add("active");
     pages[0].classList.add("active");
 }
+document.addEventListener("DOMContentLoaded", function () {
+    var ID = getQueryVariable("id");
+    if (ID) {
+        document.getElementsByClassName(ID)[0].classList.add("active");
+        window.history.replaceState("", "", `/${ID}`);
+
+        for (let i = 0; i < urls.length; i++) {
+            if (pages[i].classList.contains("active")) {
+                urls[i].classList.add("active");
+                setCookie("active_page_index", i, { "max-age": 7 * 24 * 60 * 60 });
+                continue;
+            }
+            pages[i].classList.remove("active");
+            urls[i].classList.remove("active");
+        }
+    }
+});
 
 const IMGavatar = document.getElementsByClassName("avatar")[0];
 fetch("/avatar")
@@ -52,6 +67,16 @@ const btnPrev = document.getElementById("img-prev");
 btnPrev.addEventListener("click", function () {
     document.getElementsByClassName("gallery")[0].scrollLeft -= 180;
 });
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (let i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) return pair[1];
+    }
+    return false;
+}
 
 function setCookie(name, value, options = {}) {
     options = {
