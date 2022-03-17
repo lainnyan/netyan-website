@@ -46,25 +46,25 @@ fetch("/avatar")
     });
 
 const modals = document.getElementsByClassName("modal");
+const modalContents = document.getElementsByClassName("modal-content");
 for (let i = 0; i < modals.length; i++) {
     const img = modals[i].previousElementSibling;
     img.addEventListener("click", function () {
         modals[i].style.display = "block";
     });
 
-    const span = modals[i].children[0];
-    span.addEventListener("click", function () {
-        modals[i].style.display = "none";
+    modals[i].addEventListener("click", function (eve) {
+        if (!modalContents[i].contains(eve.target)) modals[i].style.display = "none";
     });
 }
 
 const btnNext = document.getElementById("img-next");
 btnNext.addEventListener("click", function () {
-    document.getElementsByClassName("gallery")[0].scrollLeft += 180;
+    document.getElementsByClassName("gallery")[0].scrollLeft += 420;
 });
 const btnPrev = document.getElementById("img-prev");
 btnPrev.addEventListener("click", function () {
-    document.getElementsByClassName("gallery")[0].scrollLeft -= 180;
+    document.getElementsByClassName("gallery")[0].scrollLeft -= 420;
 });
 
 function getQueryVariable(variable) {
