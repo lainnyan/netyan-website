@@ -10,10 +10,11 @@ searchbar.addEventListener("input", function () {
             const tagsArrayElement = tagsArray[j];
             if (tagsArrayElement.name == charID) {
                 for (let k = 0; k < tagsArrayElement.tags.length; k++) {
-                    const tags = tagsArrayElement.tags[k];
+                    const tag = tagsArrayElement.tags[k];
+                    console.log(tag);
+                    if (!tag.includes(searchbar.value)) buildContainer.style.display = "none";
                 }
             }
-            if (!tagsArrayElement.tags.includes(searchbar.value)) buildContainer.style.display = "none";
         }
     }
 });
