@@ -11,9 +11,11 @@ searchbar.addEventListener("input", function () {
             if (tagsArrayElement.name == charID) {
                 for (let k = 0; k < tagsArrayElement.tags.length; k++) {
                     const tag = tagsArrayElement.tags[k];
-                    console.log(tag);
-                    if (!tag.includes(searchbar.value)) buildContainer.style.display = "none";
+                    if (!tag.toLowerCase().includes(searchbar.value.toLowerCase())) {
+                        if (k == tagsArrayElement.tags.length - 1) buildContainer.style.display = "none";
+                    } else break;
                 }
+                break;
             }
         }
     }
@@ -23,5 +25,45 @@ tagsArray = [
     {
         name: "keqing",
         tags: ["Кэ Цин", "кецин", "кеца", "кека", "Keqing", "Ke Qing"],
+    },
+    {
+        name: "ayaka",
+        tags: ["Аяка", "Ayaka"],
+    },
+    {
+        name: "xiao",
+        tags: ["Сяо", "Сява", "дед инсайд", "Xiao"],
+    },
+    {
+        name: "raiden",
+        tags: ["Райден", "Баал", "Эи", "Макото", "Вельзевул", "Сёгун", "Сегун", "Raiden", "Baal", "Ei", "Shogun"],
+    },
+    {
+        name: "zhongli",
+        tags: ["Чжун Ли", "дед", "Zhongli", "чжунли"],
+    },
+    {
+        name: "xiangling",
+        tags: ["Сян Лин", "Xiangling"],
+    },
+    {
+        name: "xingqiu",
+        tags: ["Син Цю", "Xingqiu", "Синий", "Синица"],
+    },
+    {
+        name: "bennett",
+        tags: ["Беннет", "Bennett", "Benny", "Беннетт", "Бенет"],
+    },
+    {
+        name: "hutao",
+        tags: ["Ху Тао", "Hu Tao", "Хутао", "Hutao", "хутава"],
+    },
+    {
+        name: "tartaglia",
+        tags: ["Тарталья", "Чайлд", "Tartaglia", "Childe", "торт"],
+    },
+    {
+        name: "yaemiko",
+        tags: ["Яэ Мико", "Yae Miko", "жрица", "кицунэ"],
     },
 ];
