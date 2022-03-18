@@ -59,7 +59,7 @@ body {
     align-items: center;
     border-radius: 25px;
 
-    background-color: rgb(246, 246, 246);
+    background-color: white;
     box-shadow: 0px 4px 4px $shadow-color;
 
     * {
@@ -210,23 +210,6 @@ body {
                 animation-name: zoom;
                 animation-duration: 0.5s;
             }
-
-            .close {
-                position: fixed;
-                top: 15px;
-                right: 45px;
-                color: white;
-                font-size: 40px;
-                font-weight: bold;
-                transition: 0.25s;
-
-                &:hover,
-                &:focus {
-                    color: hsl(0, 0%, 50%);
-                    text-decoration: none;
-                    cursor: pointer;
-                }
-            }
         }
 
         @keyframes zoom {
@@ -267,7 +250,7 @@ body {
     }
 
     tr:first-child td {
-        font-size: 14px;
+        font-size: 12px;
         padding: 0.5rem 1rem;
         color: #999;
     }
@@ -311,7 +294,10 @@ body {
     }
 }
 
-@media only screen and (max-width: 1080px) {
+@media screen and (max-width: 1080px) {
+    .modal-content {
+        height: 80% !important;
+    }
     .table-container {
         float: none;
     }
