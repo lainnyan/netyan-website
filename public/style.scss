@@ -139,7 +139,7 @@ body {
         width: 5%;
         height: 100%;
         position: fixed;
-        opacity: 0;
+        opacity: 0.75;
         top: 0;
         right: 0;
         z-index: 1;
@@ -172,6 +172,11 @@ body {
         overflow: hidden;
         flex-shrink: 0;
         cursor: pointer;
+
+        &:nth-of-type(1),
+        &:last-of-type {
+            margin: 3px 6px;
+        }
 
         .build-img {
             width: 100%;
@@ -291,6 +296,29 @@ body {
 
     ul {
         list-style-position: inside;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .card-container {
+        width: 500px;
+        height: 750px;
+
+        .nickname,
+        .decoration {
+            font-size: 18px;
+        }
+        .description,
+        .social {
+            font-size: 14px;
+        }
+        .social {
+            padding: 0.75rem 4.5rem;
+        }
+    }
+    .img-container {
+        width: 200px !important;
+        height: 600px !important;
     }
 }
 
