@@ -398,6 +398,12 @@ body {
 }
 
 @media screen and (max-width: 1080px) {
+  #img-next,
+  #img-prev,
+  #img-next:hover,
+  #img-prev:hover {
+    opacity: 0;
+  }
   .modal-content {
     height: 80% !important;
   }
