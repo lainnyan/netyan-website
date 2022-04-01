@@ -28,7 +28,7 @@ tagsArray = [
     },
     {
         name: "ayaka",
-        tags: ["Аяка", "Ayaka"],
+        tags: ["Аяка", "Ayaka", "Камисато", "Kamisato"],
     },
     {
         name: "xiao",
@@ -65,5 +65,9 @@ tagsArray = [
     {
         name: "yaemiko",
         tags: ["Яэ Мико", "Yae Miko", "жрица", "кицунэ"],
+    },
+    {
+        name: "ayato",
+        tags: ["Аято", "Ayato", "Камисато", "Kamisato"],
     },
 ];
