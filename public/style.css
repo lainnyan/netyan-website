@@ -247,7 +247,7 @@ body {
   display: none;
   position: fixed;
   z-index: 2;
-  padding: 2rem;
+  padding: 4rem;
   left: 0;
   top: 0;
   width: 100%;
@@ -260,7 +260,7 @@ body {
 .gallery .img-container .modal .modal-content {
   margin: auto;
   display: block;
-  width: 85%;
+  height: 85%;
   border: 3px solid white;
   border-radius: 5px;
   -webkit-animation-name: zoom;
